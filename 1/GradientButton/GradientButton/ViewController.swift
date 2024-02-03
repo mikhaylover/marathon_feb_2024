@@ -4,7 +4,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private let gradientView: UIView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
+    private let gradientView: UIView = UIView(frame: .zero)
+
+    private let viewSide: CGFloat = 100.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,8 @@ class ViewController: UIViewController {
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         gradientView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100.0).isActive = true
         gradientView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        gradientView.widthAnchor.constraint(equalToConstant: viewSide).isActive = true
+        gradientView.heightAnchor.constraint(equalToConstant: viewSide).isActive = true
     }
 
 
@@ -31,7 +35,7 @@ class ViewController: UIViewController {
 
     private func makeGradientLayer() -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = gradientView.bounds
+        gradientLayer.frame = CGRect(origin: .zero, size: CGSize(width: viewSide, height: viewSide))
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
         gradientLayer.colors = [
