@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     private func setLayout() {
         view.addSubview(gradientView)
         gradientView.translatesAutoresizingMaskIntoConstraints = false
-        gradientView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100.0).isActive = true
-        gradientView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100.0).isActive = true
+        gradientView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         gradientView.widthAnchor.constraint(equalToConstant: viewSide).isActive = true
         gradientView.heightAnchor.constraint(equalToConstant: viewSide).isActive = true
     }
